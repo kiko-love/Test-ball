@@ -1,0 +1,67 @@
+﻿生成启动时间为 2020/6/4 18:20:39。
+     1>项目“C:\Users\KIKO\Documents\Visual Studio 2015\Projects\反弹球打砖块\反弹球打砖块.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (弹力球第三版.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         D:\VS2015\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt ballRun.cpp main.cpp userInput.cpp deviation.cpp user_info.cpp
+         main.cpp
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(38): error C2665: “loadimage”: 2 个重载中没有一个可以转换所有参数类型
+         d:\vs2015\vc\include\easyx.h(267): note: 可能是“void loadimage(IMAGE *,LPCTSTR,LPCTSTR,int,int,bool)”
+         d:\vs2015\vc\include\easyx.h(266): note: 或  “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(38): note: 尝试匹配参数列表“(IMAGE *, const char [11], int, int)”时
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(39): error C2665: “loadimage”: 2 个重载中没有一个可以转换所有参数类型
+         d:\vs2015\vc\include\easyx.h(267): note: 可能是“void loadimage(IMAGE *,LPCTSTR,LPCTSTR,int,int,bool)”
+         d:\vs2015\vc\include\easyx.h(266): note: 或  “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(39): note: 尝试匹配参数列表“(IMAGE *, const char [11], int, int)”时
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(40): error C2665: “loadimage”: 2 个重载中没有一个可以转换所有参数类型
+         d:\vs2015\vc\include\easyx.h(267): note: 可能是“void loadimage(IMAGE *,LPCTSTR,LPCTSTR,int,int,bool)”
+         d:\vs2015\vc\include\easyx.h(266): note: 或  “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(40): note: 尝试匹配参数列表“(IMAGE *, const char [11], int, int)”时
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(41): error C2665: “loadimage”: 2 个重载中没有一个可以转换所有参数类型
+         d:\vs2015\vc\include\easyx.h(267): note: 可能是“void loadimage(IMAGE *,LPCTSTR,LPCTSTR,int,int,bool)”
+         d:\vs2015\vc\include\easyx.h(266): note: 或  “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(41): note: 尝试匹配参数列表“(IMAGE *, const char [11], int, int)”时
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(42): error C2665: “loadimage”: 2 个重载中没有一个可以转换所有参数类型
+         d:\vs2015\vc\include\easyx.h(267): note: 可能是“void loadimage(IMAGE *,LPCTSTR,LPCTSTR,int,int,bool)”
+         d:\vs2015\vc\include\easyx.h(266): note: 或  “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(42): note: 尝试匹配参数列表“(IMAGE *, const char [8], int, int)”时
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(43): error C2665: “loadimage”: 2 个重载中没有一个可以转换所有参数类型
+         d:\vs2015\vc\include\easyx.h(267): note: 可能是“void loadimage(IMAGE *,LPCTSTR,LPCTSTR,int,int,bool)”
+         d:\vs2015\vc\include\easyx.h(266): note: 或  “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(43): note: 尝试匹配参数列表“(IMAGE *, const char [9], int, int)”时
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(44): error C2665: “loadimage”: 2 个重载中没有一个可以转换所有参数类型
+         d:\vs2015\vc\include\easyx.h(267): note: 可能是“void loadimage(IMAGE *,LPCTSTR,LPCTSTR,int,int,bool)”
+         d:\vs2015\vc\include\easyx.h(266): note: 或  “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(44): note: 尝试匹配参数列表“(IMAGE *, const char [10], int, int)”时
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(45): error C2665: “loadimage”: 2 个重载中没有一个可以转换所有参数类型
+         d:\vs2015\vc\include\easyx.h(267): note: 可能是“void loadimage(IMAGE *,LPCTSTR,LPCTSTR,int,int,bool)”
+         d:\vs2015\vc\include\easyx.h(266): note: 或  “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(45): note: 尝试匹配参数列表“(IMAGE *, const char [10], int, int)”时
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(46): error C2665: “loadimage”: 2 个重载中没有一个可以转换所有参数类型
+         d:\vs2015\vc\include\easyx.h(267): note: 可能是“void loadimage(IMAGE *,LPCTSTR,LPCTSTR,int,int,bool)”
+         d:\vs2015\vc\include\easyx.h(266): note: 或  “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(46): note: 尝试匹配参数列表“(IMAGE *, const char [10], int, int)”时
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(47): error C2665: “loadimage”: 2 个重载中没有一个可以转换所有参数类型
+         d:\vs2015\vc\include\easyx.h(267): note: 可能是“void loadimage(IMAGE *,LPCTSTR,LPCTSTR,int,int,bool)”
+         d:\vs2015\vc\include\easyx.h(266): note: 或  “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(47): note: 尝试匹配参数列表“(IMAGE *, const char [10], int, int)”时
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(169): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [34]”转换为“LPCWSTR”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(169): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(170): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [27]”转换为“LPCWSTR”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(170): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(183): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [20]”转换为“LPCWSTR”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(183): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(233): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [13]”转换为“LPCWSTR”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(233): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(234): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [14]”转换为“LPCWSTR”
+         c:\users\kiko\documents\visual studio 2015\projects\反弹球打砖块\main.cpp(234): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+         正在生成代码...
+         正在跳过...(未检测到相关更改)
+         user_info.cpp
+         deviation.cpp
+         userInput.cpp
+         ballRun.cpp
+     1>已完成生成项目“C:\Users\KIKO\Documents\Visual Studio 2015\Projects\反弹球打砖块\反弹球打砖块.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.53
