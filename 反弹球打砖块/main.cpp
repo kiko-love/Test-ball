@@ -10,27 +10,27 @@ _brick map[ROW+50][COLS];
 int brick_num = 0;
 int direction = 2;
 bool result = true;
-int score = 0;//±¾´ÎÓÎÏ·µÃ·Ö
-int chance = 3;//ÉúÃüÖµ
-int add_line = 0;;//×©¿éÔö¼ÓµÄĞĞÊı
-int add_time = 0;//×©¿éÔö¼ÓµÄ¼ä¸ôÊ±¼ä(£¨ms£©
-int randdirection = 0;//Ğ¡Çò¿ªÊ¼×óÓÒËæ»ú·½Ïò±êÖ¾
-int end = 0;//×©¿éÆÌÂúÆÁÄ»±êÖ¾
-int flag = 0;//»­Ãæ¿ªÊ¼ÔË¶¯Ö¾
-int board_dertx = 20;//±¸ÓÃ
-int ballvy_temp = 2;//³õÊ¼»¯Ğ¡Çò×İÏò¼ÓËÙ¶È
-int ballvx_temp = 2;//³õÊ¼»¯Ğ¡ÇòºáÏß¼ÓËÙ¶È
+int score = 0;//æœ¬æ¬¡æ¸¸æˆå¾—åˆ†
+int chance = 3;//ç”Ÿå‘½å€¼
+int add_line = 0;;//ç –å—å¢åŠ çš„è¡Œæ•°
+int add_time = 0;//ç –å—å¢åŠ çš„é—´éš”æ—¶é—´(ï¼ˆmsï¼‰
+int randdirection = 0;//å°çƒå¼€å§‹å·¦å³éšæœºæ–¹å‘æ ‡å¿—
+int end = 0;//ç –å—é“ºæ»¡å±å¹•æ ‡å¿—
+int flag = 0;//ç”»é¢å¼€å§‹è¿åŠ¨å¿—
+int board_dertx = 20;//å¤‡ç”¨
+int ballvy_temp = 2;//åˆå§‹åŒ–å°çƒçºµå‘åŠ é€Ÿåº¦
+int ballvx_temp = 2;//åˆå§‹åŒ–å°çƒæ¨ªçº¿åŠ é€Ÿåº¦
 int add_time_temp=2000;
 char gamerNickname[13];
-int play_sec=0;//ÓÎÏ·ÓÃÊ±
-char buf[100];//Ğ´ÈëÊı¾İÎÄ¼şµÄÂ·¾¶Êı×é
-time_t t;//Ê±¼äÀàÊı¾İ£¬ÓÃÓÚ¼ÇÂ¼Íæ¼ÒÓÎÏ·Ê±¼äºÍÈÕÆÚ
-struct tm * lt;//ÓëÉÏ·½Êı¾İÀàĞÍ´îÅäÊ¹ÓÃ£¬Ê±¼ä½á¹¹Ìå£¬¼ÇÂ¼ÄêÔÂÈÕÊ±·ÖÃë
-char IsContinue;//ÓÎÏ·Ñ­»µ±êÖ¾
+int play_sec=0;//æ¸¸æˆç”¨æ—¶
+char buf[100];//å†™å…¥æ•°æ®æ–‡ä»¶çš„è·¯å¾„æ•°ç»„
+time_t t;//æ—¶é—´ç±»æ•°æ®ï¼Œç”¨äºè®°å½•ç©å®¶æ¸¸æˆæ—¶é—´å’Œæ—¥æœŸ
+struct tm * lt;//ä¸ä¸Šæ–¹æ•°æ®ç±»å‹æ­é…ä½¿ç”¨ï¼Œæ—¶é—´ç»“æ„ä½“ï¼Œè®°å½•å¹´æœˆæ—¥æ—¶åˆ†ç§’
+char IsContinue;//æ¸¸æˆå¾ªåæ ‡å¿—
 /*
-¹¦ÄÜ£º³õÊ¼»¯Í¼Æ¬×ÊÔ´
-²ÎÊı£ºÎŞ
-·µ»ØÖµ£ºÎŞ
+åŠŸèƒ½ï¼šåˆå§‹åŒ–å›¾ç‰‡èµ„æº
+å‚æ•°ï¼šæ— 
+è¿”å›å€¼ï¼šæ— 
 */
 void loadResource()
 {
@@ -43,13 +43,13 @@ void loadResource()
 	loadimage(&ball[1], "ball1.bmp", 30, 30);
 	loadimage(&life[2], "life3.png", 100, 30);
 	loadimage(&life[1], "life2.png", 100, 30);
-	loadimage(&life[0], "Í¼Æ¬2.png", 100, 30);
+	loadimage(&life[0], "å›¾ç‰‡2.png", 100, 30);
 }
 
 /*
-¹¦ÄÜ£ºÀûÓÃ¶şÎ¬Êı×éËæ»úÉú³É×©¿éµÄÑÕÉ«
-²ÎÊı£ºÎŞ
-·µ»ØÖµ£ºÎŞ
+åŠŸèƒ½ï¼šåˆ©ç”¨äºŒç»´æ•°ç»„éšæœºç”Ÿæˆç –å—çš„é¢œè‰²
+å‚æ•°ï¼šæ— 
+è¿”å›å€¼ï¼šæ— 
 */
 void makebrick()
 {
@@ -63,9 +63,9 @@ void makebrick()
 	}
 }
 /*
-¹¦ÄÜ£º»­×©¿é
-²ÎÊı£ºÎŞ
-·µ»ØÖµ£ºÎŞ
+åŠŸèƒ½ï¼šç”»ç –å—
+å‚æ•°ï¼šæ— 
+è¿”å›å€¼ï¼šæ— 
 */
 void drawBrick()
 {
@@ -73,9 +73,9 @@ void drawBrick()
 	{
 		result = false;
 	}
-	for (int i =0; i < ROW + add_line; i++)//×©¿éĞĞÊı
+	for (int i =0; i < ROW + add_line; i++)//ç –å—è¡Œæ•°
 	{
-		for (int j = 0; j < COLS; j++)//×©¿éÁĞÊı
+		for (int j = 0; j < COLS; j++)//ç –å—åˆ—æ•°
 		{
 			int x = j * 120;
 			int y = i * 30;
@@ -98,18 +98,18 @@ void drawBrick()
 	}
 }
 /*
-¹¦ÄÜ£º»­µ²°å
-²ÎÊı£ºÎŞ
-·µ»ØÖµ£ºÎŞ
+åŠŸèƒ½ï¼šç”»æŒ¡æ¿
+å‚æ•°ï¼šæ— 
+è¿”å›å€¼ï¼šæ— 
 */
 void drawBoardl()
 {
 	putimage(boardpos.x, boardpos.y, &board);
 }
 /*
-¹¦ÄÜ£º»­Ğ¡Çò
-²ÎÊı£ºÎŞ
-·µ»ØÖµ£ºÎŞ
+åŠŸèƒ½ï¼šç”»å°çƒ
+å‚æ•°ï¼šæ— 
+è¿”å›å€¼ï¼šæ— 
 */
 void drawBall()
 {
@@ -120,13 +120,13 @@ void drawBall()
 	putimage(ballpos.x, ballpos.y, &ball[0], SRCPAINT);
 }
 /*
-¹¦ÄÜ£ºÓÎÏ·Êı¾İ³õÊ¼»¯
-²ÎÊı£ºÎŞ
-·µ»ØÖµ£ºÎŞ
+åŠŸèƒ½ï¼šæ¸¸æˆæ•°æ®åˆå§‹åŒ–
+å‚æ•°ï¼šæ— 
+è¿”å›å€¼ï¼šæ— 
 */
 void startup()
 {
-	lt = localtime(&t);//×ªÎªÊ±¼ä½á¹¹¡£
+	lt = localtime(&t);//è½¬ä¸ºæ—¶é—´ç»“æ„ã€‚
 	play_sec = lt->tm_sec;
 	add_line = 0;
 	add_time = 0;
@@ -140,30 +140,33 @@ void startup()
 	ballpos.vx = 0;
 	ballpos.vy = 0;
 	makebrick();
-	chance = 3;//ÓÎÏ·ÉúÃüÖµ
+	chance = 3;//æ¸¸æˆç”Ÿå‘½å€¼
 	srand((unsigned int)time(NULL));
 	randdirection = rand() % 2;
 }
 
 /*
-¹¦ÄÜ£ºÖ÷º¯Êı
-²ÎÊı£ºÎŞ
-·µ»ØÖµ£ºÓÉÏµÍ³¾ö¶¨´¦Àí
+åŠŸèƒ½ï¼šä¸»å‡½æ•°
+å‚æ•°ï¼šæ— 
+è¿”å›å€¼ï¼šç”±ç³»ç»Ÿå†³å®šå¤„ç†
 */
 int main()
 {
-	//	gotoxy(0, 0);//±¸ÓÃ
-	//HideCursor();//±¸ÓÃ
+	//gotoxy(0, 0);//å¤‡ç”¨
+	//HideCursor();//å¤‡ç”¨
 	startup();
 	user_read();
 	loadResource();
 	mciSendString("open background.mp3 alias mymusic", NULL, 0, NULL);
 	mciSendString("open hit.mp3 alias mymusic", NULL, 0, NULL);
-	//È«¾ÖÑ­»·
+	/*
+	å…¨å±€å¾ªç¯ï¼Œæ­¤å¤„åº”è¯¥æœ‰ä¸€å¤„whileå¾ªç¯ï¼Œä½†ç”±äºå¾ªç¯å¯èƒ½å¯¼è‡´ä¸€ä¸ªå†…å­˜æ³„æ¼çš„BUGå‡ºç°ï¼Œ
+	æš‚æœªæ·»åŠ ï¼Œæœ‰å…´è¶£çš„æœ‹å‹å¯ä»¥è‡ªè¡Œå°è¯•ï¼Œå‘ç°é—®é¢˜å¯ä»¥ç›´æ¥æäº¤åˆ°issuesï¼Œè°¢è°¢
+	*/
 	
 		//startup();
 		initgraph(WIDTH, HEIGHT);
-		//ÓÎÏ·»­ÃæË¢ĞÂ
+		//æ¸¸æˆç”»é¢åˆ·æ–°
 		while (1)
 		{
 			BeginBatchDraw();
@@ -194,7 +197,7 @@ int main()
 			if (result == false && end == 0)
 			{
 
-				MessageBoxA(NULL, "Ğ¡ÇòµôÂä£¬±¾¾ÖÓÎÏ·½áÊø£¬ÄãÒ»¹²ÓĞÈı´Î»ú»á", "ÓÎÏ·½á¹û£º", MB_OK);
+				MessageBoxA(NULL, "å°çƒæ‰è½ï¼Œæœ¬å±€æ¸¸æˆç»“æŸï¼Œä½ ä¸€å…±æœ‰ä¸‰æ¬¡æœºä¼š", "æ¸¸æˆç»“æœï¼š", MB_OK);
 				chance--;
 				if (chance == 0)
 				{
@@ -211,7 +214,7 @@ int main()
 			}
 			if (result == false && end == 1)
 			{
-				MessageBoxA(NULL, "Ğ¡Çò±»×©¿éÑ¹µÃ´­²»¹ıÆøÀ²£¬±¾¾ÖÓÎÏ·½áÊø", "GameOver", MB_OK);
+				MessageBoxA(NULL, "å°çƒè¢«ç –å—å‹å¾—å–˜ä¸è¿‡æ°”å•¦ï¼Œæœ¬å±€æ¸¸æˆç»“æŸ", "GameOver", MB_OK);
 				chance = 0;
 				break;
 			}
@@ -233,12 +236,12 @@ int main()
 		{
 			system("cls");
 			system("mode con cols=60lines=30 ");
-			SetWindowLongPtrA(GetConsoleWindow(), GWL_STYLE, GetWindowLongPtrA(GetConsoleWindow(), GWL_STYLE)& ~WS_SIZEBOX & ~WS_MAXIMIZEBOX);//ÏµÍ³api£¬¹Ì¶¨´°¿Ú£¬ÉèÖÃÎª²»¿ÉËõ·Å´°¿Ú´óĞ¡
+			SetWindowLongPtrA(GetConsoleWindow(), GWL_STYLE, GetWindowLongPtrA(GetConsoleWindow(), GWL_STYLE)& ~WS_SIZEBOX & ~WS_MAXIMIZEBOX);//ç³»ç»Ÿapiï¼Œå›ºå®šçª—å£ï¼Œè®¾ç½®ä¸ºä¸å¯ç¼©æ”¾çª—å£å¤§å°
 			printLogo();
 		}
 		printUserinfo();
-		printf("½áËãÍê³É\n");
-		printf("\n\n±íÏÖµÃ²»´íÅ¶£¬Äú´Ë´ÎµÃ·ÖÎª%d£¬¹²¼ÆÓÃÊ±Îª%dÃë%d\n\n", score, play_sec, chance);
+		printf("ç»“ç®—å®Œæˆ\n");
+		printf("\n\nè¡¨ç°å¾—ä¸é”™å“¦ï¼Œæ‚¨æ­¤æ¬¡å¾—åˆ†ä¸º%dï¼Œå…±è®¡ç”¨æ—¶ä¸º%dç§’%d\n\n", score, play_sec, chance);
 		system("pause");
 		//menu();
 	
