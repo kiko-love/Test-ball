@@ -1,7 +1,7 @@
-/*Í·ÎÄ¼şÉùÃ÷£º°üº¬ÆäÓà×ÓÄ£¿éËùÓĞÓÃµ½µÄÈ«¾Ö±äÁ¿¡¢³£Á¿¡¢½á¹¹ÌåÒÔ¼°±ê×¼µ÷ÓÃ¿âĞÅÏ¢*/
-/*±àĞ´Õß£ºÈí¹¤195 ÕÅÒÕ 201908128*/
-/*±àĞ´Ê±¼ä£º2020/05/11 ¡ª2020/05/31 */
-/*ÀÛ¼ÆĞŞ¸ÄÖØÒªBUGÊı£º10 */
+/*å¤´æ–‡ä»¶å£°æ˜ï¼šåŒ…å«å…¶ä½™å­æ¨¡å—æ‰€æœ‰ç”¨åˆ°çš„å…¨å±€å˜é‡ã€å¸¸é‡ã€ç»“æ„ä½“ä»¥åŠæ ‡å‡†è°ƒç”¨åº“ä¿¡æ¯*/
+/*ç¼–å†™è€…ï¼škiko-love*/
+/*ç¼–å†™æ—¶é—´ï¼š2020/05/11 â€”2020/05/31 */
+/*ç´¯è®¡ä¿®æ”¹é‡è¦BUGæ•°ï¼š25+ */
 
 #ifndef  _GAME_H_
 	#define _GAME_H_
@@ -10,13 +10,13 @@
 #define HEIGHT 30*20
 #define ROW 5
 #define COLS 9
-//µ²°å½á¹¹Ìå
+//æŒ¡æ¿ç»“æ„ä½“
 typedef struct board_info
 {
 	int x, y;
 
 }_board;
-//Ğ¡Çò½á¹¹Ìå
+//å°çƒç»“æ„ä½“
 typedef struct  ball_info
 {
 	int x, y;
@@ -24,13 +24,13 @@ typedef struct  ball_info
 	int radius;
 
 }_ball;
-//×©¿é½á¹¹Ìå
+//ç –å—ç»“æ„ä½“
 typedef struct brick_info
 {
 	int x, y;
 	int color;
 }_brick;
-//Íæ¼Ò½á¹¹Ìå
+//ç©å®¶ç»“æ„ä½“
 typedef struct gamer_info
 {
 	char nickname[13];
@@ -50,17 +50,17 @@ extern _ball ballpos;
 extern struct tm *lt;
 extern int direction;
 extern char gamerNickname[13];
-extern int add_line;//×©¿éÔö¼ÓµÄĞĞÊı
+extern int add_line;//ç –å—å¢åŠ çš„è¡Œæ•°
 extern int brick_num;
-extern int score;//Íæ¼ÒµÃ·Ö£¬1·Ö=1¿é×©
-extern bool result;//ÅĞ¶¨Ğ¡ÇòÊÇ·ñµøÂä£¬×÷ÎªÓÎÏ·½áÊøµÄ±êÖ¾
-extern int add_time;//×©¿éÔö¼ÓµÄÊ±¼ä¼ä¸ô
+extern int score;//ç©å®¶å¾—åˆ†ï¼Œ1åˆ†=1å—ç –
+extern bool result;//åˆ¤å®šå°çƒæ˜¯å¦è·Œè½ï¼Œä½œä¸ºæ¸¸æˆç»“æŸçš„æ ‡å¿—
+extern int add_time;//ç –å—å¢åŠ çš„æ—¶é—´é—´éš”
 extern int end;
-extern char buf[100];//Ğ´ÈëÊı¾İÎÄ¼şµÄÂ·¾¶Êı×é
+extern char buf[100];//å†™å…¥æ•°æ®æ–‡ä»¶çš„è·¯å¾„æ•°ç»„
 extern int play_sec;
-extern int board_dertx;//Ä¾°åÒÆ¶¯ËÙ¶È
-extern int ballvy_temp;//Ğ¡Çò³õÊ¼»¯×İÏò¼ÓËÙ¶È
-extern int ballvx_temp;//Ğ¡Çò³õÊ¼»¯ºáÏò¼ÓËÙ¶È
+extern int board_dertx;//æœ¨æ¿ç§»åŠ¨é€Ÿåº¦
+extern int ballvy_temp;//å°çƒåˆå§‹åŒ–çºµå‘åŠ é€Ÿåº¦
+extern int ballvx_temp;//å°çƒåˆå§‹åŒ–æ¨ªå‘åŠ é€Ÿåº¦
 extern int add_time_temp;
 extern char nickname[32];
 extern void printLogo();
